@@ -6,7 +6,14 @@ janela = customtkinter.CTk()
 janela.geometry("500x300") #Tamanho da janela
 janela.title("Cadastro de produtos") #Nome do programana.
 
-def validar_usuario(nome_usuario):
+#Essas variaveis são globais, podem ser chamadas dentro da função.
+entrada_email = None
+entrada_senha = None
+
+'''Essa função roda dentro da DEF Cadastrar Usuario. Ela é responsavél por verificar se já existe um usuario
+o login que está sendo cadastrado.'''
+
+def validar_usuario(nome_usuario): #A função recebe o parametro novo usuario, que vem 
     with open('banco_de_dados.TXT', 'r') as arquivo:
         lista_usuarios = arquivo.readlines() #transforma o arquivo em uma lista.
 
